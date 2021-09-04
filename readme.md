@@ -14,8 +14,8 @@
 ## Prerequisites
 
 - JavaScript ES6
+- jsx
 - React
-- NodeJS
 - Code Editor(VScode)
 
 ## Usage
