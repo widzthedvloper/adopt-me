@@ -23,9 +23,9 @@
 1. Clone the repository by using the `git clone git@github.com:widzthedvloper/catalogue.git` command in your terminal
 2. `cd` into the cloned repository
 3. Run `npm install or npm i`
-4. Open the codebase using any code editor of your choice, preferably, visual studio code editor.
-5. Open the vscode terminal and run the application by typing `npm start` and hit enter.
-6. Run `npm test` to test the app
+4. Run `npm dev` to run the app in a local server
+5. Run `npm format` and prettier will format your code in case you add or modify something
+6. Open the the folder in the code editer of your choice :)
 
 ## Contributing
 
