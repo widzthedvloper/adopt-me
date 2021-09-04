@@ -1,6 +1,6 @@
-# REACT CATALOG OF RECIPES
+# Adopt Me App
 
-> This is a catalog of recipes. The app allows a user to filter through some meals by order number or name. It also allows you to see more details about each dish(Ingredients and instructions on how to make it).
+> In this repo i follow along with Brian Holt in the complete intro to react v6(Front End Master). We start working with react form scratch without using the create-react-app command.
 
 <p align="center">
    <img src="https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white">
