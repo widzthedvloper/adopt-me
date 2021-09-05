@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import {useBreedList} from './useBreedList';
-import Results from './Results';
+import { useBreedList } from "./useBreedList";
+import Results from "./Results";
 
 require("babel-core/register");
 require("babel-polyfill");
@@ -17,7 +17,7 @@ const SearchParams = () => {
 
   useEffect(() => {
     requestPets();
-  }, []);//eslint-disable-line react-hooks/exhaustive-deps
+  }, []); //eslint-disable-line react-hooks/exhaustive-deps
 
   function requestPets() {
     fetch(
@@ -29,10 +29,12 @@ const SearchParams = () => {
 
   return (
     <div className="search-params">
-      <form onSubmit={e => {
+      <form
+        onSubmit={(e) => {
           e.preventDefault();
           requestPets();
-      }}>
+        }}
+      >
         <label htmlFor="location">
           location
           <input
@@ -78,7 +80,7 @@ const SearchParams = () => {
         </label>
         <button>Submit</button>
       </form>
-      <Results pets={pets}/>
+      <Results pets={pets} />
     </div>
   );
 };
