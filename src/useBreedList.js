@@ -15,7 +15,7 @@ export const useBreedList = (animal) => {
             requestBreedList();
         }
 
-        const requestBreedList = () => {
+        function requestBreedList() {
              setBreedList([]);
              setStatus("Loading")
              fetch(`http://pets-v2.dev-apis.com/breeds?animal=${animal}`)
