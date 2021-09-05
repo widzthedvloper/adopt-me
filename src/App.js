@@ -1,5 +1,5 @@
 import React from "react";
-import ReactDOM  from "react-dom";
+import ReactDOM from "react-dom";
 import SearchParams from "./SearchParams";
 
 // const App = () => {
@@ -29,7 +29,7 @@ const App = () => {
       <h1>Adopt Me!</h1>
       <SearchParams />
     </div>
-  )
-}
+  );
+};
 
-ReactDOM.render(<App/>, document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById("root"));
