@@ -1,6 +1,5 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { permuteDomain } from "tough-cookie";
 import { Pet } from "./Pet";
 require("babel-core/register");
 require("babel-polyfill");
