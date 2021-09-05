@@ -1,11 +1,29 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { Pet } from './Pet';
+require('babel-core/register');
+require('babel-polyfill');
 
 const ANIMALS = ["bird", "cat", "dog", "rabbit", "reptile"];
+const BREEDS = [];
 
-function SearchParams() {
-    const [location, setLocation] = useState("Seattle, WA")
-    const [animal, setAnimal] = useState("")
+const SearchParams = () => {
+    const [location, setLocation] = useState("Seattle, WA");
+    const [animal, setAnimal] = useState("");
+    const [breed, setBreed] = useState("");
+    const [pets, setPets] = useState([]);
+
+
+    useEffect(() => {
+        requestPets();
+    }, [])
+
+    function requestPets() {
+        fetch(
+            `http://pets-v2.dev-apis.com/pets?animal=${animal}&location=${location}&breed=${breed}`
+        ).then(res => res.json())
+        .then(res => setPets(res.pets));
+    };
 
     return (
         <div className="search-params">
@@ -35,10 +53,26 @@ function SearchParams() {
                     </select>
                 
                 </label>
+                <label htmlFor="animal">
+                    BREED
+                    <select
+                        id="breed"
+                        value = {breed}
+                        onChange={e => setBreed(e.target.value)}
+                        onBlur={e => setBreed(e.target.value)}
+                    >
+                        <option />
+                        {
+                            // typically you should not use index as key
+                            BREEDS.map((breed, key) => <option key={key}>{breed}</option>)
+                        }
+                    </select>
+                
+                </label>
                 <button>Submit</button>
             </form>
         </div>
     )
 }
 
-export default SearchParams
+export default SearchParams;
