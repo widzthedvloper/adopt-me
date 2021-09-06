@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect, useContext } from "react";
 import { useBreedList } from "./useBreedList";
 import Results from "./Results";
-import ThemeContext from "./ThemeContext"
+import ThemeContext from "./ThemeContext";
 
 require("babel-core/register");
 require("babel-polyfill");
@@ -16,7 +16,6 @@ const SearchParams = () => {
   const [pets, setPets] = useState([]);
   const [breeds] = useBreedList(animal);
   const [theme, setTheme] = useContext(ThemeContext);
-
 
   useEffect(() => {
     requestPets();
@@ -83,10 +82,10 @@ const SearchParams = () => {
         </label>
         <label htmlFor="theme">
           Theme
-          <select 
+          <select
             value={theme}
-            onChange={ e => setTheme(e.target.value)}
-            onBlur={e => setTheme(e.target.value)}
+            onChange={(e) => setTheme(e.target.value)}
+            onBlur={(e) => setTheme(e.target.value)}
           >
             <option value="darkblue">Dark Blue</option>
             <option value="green">Green</option>
@@ -96,7 +95,7 @@ const SearchParams = () => {
             <option value="mediumorchid">Mediumorchid</option>
           </select>
         </label>
-        <button style={{ backgroundColor: theme}}>Submit</button>
+        <button style={{ backgroundColor: theme }}>Submit</button>
       </form>
       <Results pets={pets} />
     </div>

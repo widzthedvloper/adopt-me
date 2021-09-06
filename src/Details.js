@@ -9,8 +9,7 @@ import ThemeContext from "./ThemeContext";
 import Modal from "./Modal";
 
 class Details extends Component {
-
-    state = { loading: true, showModal: false };
+  state = { loading: true, showModal: false };
 
   componentDidMount() {
     fetch(`http://pets-v2.dev-apis.com/pets?id=${this.props.match.params.id}`)
@@ -20,17 +19,16 @@ class Details extends Component {
       );
   }
 
-  toggloModal = () => this.setState({ showModal: !this.state.showModal })
-  adopt = () => (window.location = 'http://bit.ly/pet-adopt')
+  toggloModal = () => this.setState({ showModal: !this.state.showModal });
+  adopt = () => (window.location = "http://bit.ly/pet-adopt");
 
   render() {
-    if(this.state.loading) {
-        <h2>Loading ...</h2>
+    if (this.state.loading) {
+      <h2>Loading ...</h2>;
     }
 
-
-
-    const { animal, breed, city, state, description, name, images, showModal } = this.state;
+    const { animal, breed, city, state, description, name, images, showModal } =
+      this.state;
 
     return (
       <div className="details">
@@ -39,15 +37,18 @@ class Details extends Component {
           <h1>{name}</h1>
           <h2>{`${animal} - ${breed} - ${city}, ${state}`}</h2>
           <ThemeContext.Consumer>
-            {
-              ([theme]) => (
-                <button onClick={this.toggloModal} style={{ backgroundColor: theme}}>Adopt {name}</button>
-              )
-            }
+            {([theme]) => (
+              <button
+                onClick={this.toggloModal}
+                style={{ backgroundColor: theme }}
+              >
+                Adopt {name}
+              </button>
+            )}
           </ThemeContext.Consumer>
           <p>{description}</p>
-          {
-            showModal ? ( <Modal>
+          {showModal ? (
+            <Modal>
               <div>
                 <h1>Would you like to adopt {name}</h1>
                 <div className="buttons">
@@ -55,8 +56,8 @@ class Details extends Component {
                   <button onClick={this.toggloModal}>No</button>
                 </div>
               </div>
-            </Modal>) : null
-          }
+            </Modal>
+          ) : null}
         </div>
       </div>
     );
@@ -66,9 +67,9 @@ class Details extends Component {
 const DetailsWithRouter = withRouter(Details);
 
 export default function DetailsWithErrorBoundery() {
-  return(
+  return (
     <ErrorBoundary>
       <DetailsWithRouter />
     </ErrorBoundary>
-  )
+  );
 }
