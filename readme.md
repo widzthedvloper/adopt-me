@@ -31,6 +31,11 @@
 
 This project is for educational purposes.
 
+## Acknowledgment
+
+- Brian Holt
+- FrontEndMaster
+
 👤 **Widzmarc Jean Nesly Phelle**
 
 - GitHub: [@widzthedvloper](https://github.com/widzthedvloper)
