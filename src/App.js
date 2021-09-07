@@ -7,33 +7,16 @@ import Details from "./Details";
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import ThemeContext from "./ThemeContext";
 
-// const App = () => {
-//   return React.createElement("div", {}, [
-//     React.createElement("h1", {}, "Adopt Me!"),
-//     React.createElement(Pet, {
-//       name: "Luna",
-//       animal: "Dog",
-//       breed: "Havanese",
-//     }),
-//     React.createElement(Pet, {
-//       name: "Pepper",
-//       animal: "Bird",
-//       breed: "Cockatiel",
-//     }),
-//     React.createElement(Pet, {
-//       name: "Sudo",
-//       animal: "Dog",
-//       breed: "Wheaten Terrier",
-//     }),
-//   ]);
-// };
-
 const App = () => {
   const theme = useState("darkblue");
 
   return (
     <ThemeContext.Provider value={theme}>
-      <div>
+      <div className="p-0 m-0" 
+      style={{
+        background: "url(http://pets-images.dev-apis.com/pets/wallpaperA.jpg",
+      }}
+      >
         <Router>
           <header>
             <Link to="/">
