@@ -5,14 +5,16 @@
         "plugin:react/recommended",
         "plugin:jsx-a11y/recommended",
         "plugin:react-hooks/recommended",
+        "plugin:@typescript-eslint/recommended",
         "prettier"
     ],
     "rules": {
         "react/proptypes": 0,
-        "react/react-in-jsx-scope": 0
+        "react/react-in-jsx-scope": 0,
+        "@typescrypt-eslint/no-empty-functions": 0
     },
-    "plugins": ["react", "import", "jsx-a11y"],
-    "parser": "@babel/eslint-parser",
+    "plugins": ["react", "import", "jsx-a11y", "@typescript-eslint"],
+    "parser": "@typescript-eslint/parser",
     "parserOptions": {
         "ecmaVersion": 2021,
         "sourceType": "module",
@@ -28,6 +30,14 @@
     "settings": {
         "react": {
             "version": "detect"
+        },
+        "import/parsers": {
+            "@typescript-eslint/parser": [".ts", ".tsx"]
+        },
+        "import/resolver": {
+            "typescript": {
+                "alwaysTryTypes": true
+            }
         }
     }
 }
