@@ -38,18 +38,20 @@ const SearchParams = () => {
           requestPets();
         }}
       >
-        <label htmlFor="location">
+        <label className="search-label" htmlFor="location">
           location
           <input
+            className="search-control"
             id="location"
             onChange={(e) => setLocation(e.target.value)}
             value={location}
             placeholder="Location"
           />
         </label>
-        <label htmlFor="animal">
+        <label className="search-label" htmlFor="animal">
           ANIMAL
           <select
+            className="search-control"
             id="animal"
             value={animal}
             onChange={(e) => setAnimal(e.target.value)}
@@ -64,9 +66,10 @@ const SearchParams = () => {
             }
           </select>
         </label>
-        <label htmlFor="animal">
+        <label className="search-label" htmlFor="breed">
           BREED
           <select
+            className="search-control"
             id="breed"
             value={breed}
             onChange={(e) => setBreed(e.target.value)}
@@ -81,9 +84,10 @@ const SearchParams = () => {
             }
           </select>
         </label>
-        <label htmlFor="theme">
+        <label className="search-label" htmlFor="theme">
           Theme
           <select
+            className="search-control"
             value={theme}
             onChange={(e) => setTheme(e.target.value)}
             onBlur={(e) => setTheme(e.target.value)}
@@ -96,7 +100,7 @@ const SearchParams = () => {
             <option value="mediumorchid">Mediumorchid</option>
           </select>
         </label>
-        <button style={{ backgroundColor: theme }}>Submit</button>
+        <button className="search-control" style={{ backgroundColor: theme }}>Submit</button>
       </form>
       <Results pets={pets} />
     </div>
