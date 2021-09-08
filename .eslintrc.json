@@ -11,7 +11,7 @@
     "rules": {
         "react/proptypes": 0,
         "react/react-in-jsx-scope": 0,
-        "@typescrypt-eslint/no-empty-functions": 0
+        "@typescrypt-eslint/no-empty-function": 0
     },
     "plugins": ["react", "import", "jsx-a11y", "@typescript-eslint"],
     "parser": "@typescript-eslint/parser",
