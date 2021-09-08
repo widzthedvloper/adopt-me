@@ -23,4 +23,9 @@ app.use((req, res) => {
     );
 
     res.status(staticContext.statusCode || 200);
+    res.send(`${parts[0]}${renderToString(reactMarkup)}${parts[1]}`);
+    res.end();
+
+    console.log(`listening on http://localhost:${PORT}`);
+    app.listen(PORT);
 })
